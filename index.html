@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Event Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <h1>Event Management System</h1>
+
+    <h2>Create Event</h2>
+
+    <form id="eventForm">
+
+        <label>Event Name:</label>
+        <br>
+
+        <input
+            type="text"
+            id="eventName"
+            placeholder="Enter event name"
+        >
+
+        <br><br>
+
+        <label>Event Date:</label>
+        <br>
+
+        <input
+            type="date"
+            id="eventDate"
+        >
+
+        <br><br>
+
+        <label>Event Location:</label>
+        <br>
+
+        <input
+            type="text"
+            id="eventLocation"
+            placeholder="Enter event location"
+        >
+
+        <br><br>
+
+        <label>Event Type:</label>
+        <br>
+
+        <select id="eventType">
+
+            <option value="">Select Event Type</option>
+
+            <option value="Wedding">Wedding</option>
+
+            <option value="Birthday">Birthday</option>
+
+            <option value="Corporate">Corporate</option>
+
+            <option value="Engagement">Engagement</option>
+
+        </select>
+
+        <br><br>
+
+        <button type="submit">
+            Create Event
+        </button>
+
+    </form>
+
+    <div id="eventResult"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
