@@ -1,63 +1,88 @@
+// =====================================================
+// GUEST LIST
+// =====================================================
+
 document
-    .getElementById("eventForm")
+    .getElementById("guestForm")
     .addEventListener("submit", function(event) {
 
         event.preventDefault();
 
-        let eventName =
-            document.getElementById("eventName").value;
 
-        let eventDate =
-            document.getElementById("eventDate").value;
+        let guestName =
+            document.getElementById("guestName").value.trim();
 
-        let eventLocation =
-            document.getElementById("eventLocation").value;
+        let guestContact =
+            document.getElementById("guestContact").value.trim();
 
-        let eventType =
-            document.getElementById("eventType").value;
+        let guestCount =
+            document.getElementById("guestCount").value;
+
+        let rsvpStatus =
+            document.getElementById("rsvpStatus").value;
 
 
-        if (eventName === "") {
-            alert("Please enter event name");
-            return;
-        }
+        if (guestName === "") {
 
-        if (eventDate === "") {
-            alert("Please select event date");
-            return;
-        }
+            alert("Please enter Guest Name");
 
-        if (eventLocation === "") {
-            alert("Please enter event location");
-            return;
-        }
-
-        if (eventType === "") {
-            alert("Please select event type");
             return;
         }
 
 
-        document.getElementById("eventResult").innerHTML = `
+        if (guestContact === "") {
 
-            <h3>Event Created Successfully!</h3>
+            alert("Please enter Contact Number");
+
+            return;
+        }
+
+
+        if (guestCount === "" || guestCount <= 0) {
+
+            alert("Please enter Number of Guests");
+
+            return;
+        }
+
+
+        if (rsvpStatus === "") {
+
+            alert("Please select RSVP Status");
+
+            return;
+        }
+
+
+        document.getElementById("guestResult").innerHTML = `
+
+            <h3>Guest Added Successfully!</h3>
 
             <p>
-                Event Name: ${eventName}
+                <strong>Guest Name:</strong>
+                ${guestName}
             </p>
 
             <p>
-                Event Date: ${eventDate}
+                <strong>Contact Number:</strong>
+                ${guestContact}
             </p>
 
             <p>
-                Event Location: ${eventLocation}
+                <strong>Number of Guests:</strong>
+                ${guestCount}
             </p>
 
             <p>
-                Event Type: ${eventType}
+                <strong>RSVP Status:</strong>
+                ${rsvpStatus}
             </p>
 
         `;
+
+
+        document
+            .getElementById("guestForm")
+            .reset();
 
     });

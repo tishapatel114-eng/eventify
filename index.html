@@ -1,87 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- ================= GUEST LIST ================= -->
 
-<head>
+<hr>
 
-    <meta charset="UTF-8">
+<h2>Guest List</h2>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<form id="guestForm">
 
-    <title>Event Management System</title>
+    <label>Guest Name:</label>
+    <br>
 
-    <link rel="stylesheet" href="style.css">
+    <input
+        type="text"
+        id="guestName"
+        placeholder="Enter guest name"
+    >
 
-</head>
+    <br><br>
 
-<body>
 
-    <h1>Event Management System</h1>
+    <label>Contact Number:</label>
+    <br>
 
-    <h2>Create Event</h2>
+    <input
+        type="tel"
+        id="guestContact"
+        placeholder="Enter contact number"
+    >
 
-    <form id="eventForm">
+    <br><br>
 
-        <label>Event Name:</label>
-        <br>
 
-        <input
-            type="text"
-            id="eventName"
-            placeholder="Enter event name"
-        >
+    <label>Number of Guests:</label>
+    <br>
 
-        <br><br>
+    <input
+        type="number"
+        id="guestCount"
+        placeholder="Enter number of guests"
+        min="1"
+    >
 
-        <label>Event Date:</label>
-        <br>
+    <br><br>
 
-        <input
-            type="date"
-            id="eventDate"
-        >
 
-        <br><br>
+    <label>RSVP Status:</label>
+    <br>
 
-        <label>Event Location:</label>
-        <br>
+    <select id="rsvpStatus">
 
-        <input
-            type="text"
-            id="eventLocation"
-            placeholder="Enter event location"
-        >
+        <option value="">
+            Select RSVP Status
+        </option>
 
-        <br><br>
+        <option value="Confirmed">
+            Confirmed
+        </option>
 
-        <label>Event Type:</label>
-        <br>
+        <option value="Pending">
+            Pending
+        </option>
 
-        <select id="eventType">
+        <option value="Declined">
+            Declined
+        </option>
 
-            <option value="">Select Event Type</option>
+    </select>
 
-            <option value="Wedding">Wedding</option>
+    <br><br>
 
-            <option value="Birthday">Birthday</option>
 
-            <option value="Corporate">Corporate</option>
+    <button type="submit">
+        Add Guest
+    </button>
 
-            <option value="Engagement">Engagement</option>
+</form>
 
-        </select>
-
-        <br><br>
-
-        <button type="submit">
-            Create Event
-        </button>
-
-    </form>
-
-    <div id="eventResult"></div>
-
-    <script src="script.js"></script>
-
-</body>
-
-</html>
+<div id="guestResult"></div>
