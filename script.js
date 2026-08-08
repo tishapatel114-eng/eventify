@@ -2,50 +2,73 @@
 // CREATE EVENT
 // =====================================================
 
-document.getElementById("eventForm").addEventListener("submit", function(event) {
+document
+    .getElementById("eventForm")
+    .addEventListener("submit", function (event) {
 
-    event.preventDefault();
+        event.preventDefault();
 
-    let eventName = document.getElementById("eventName").value.trim();
-    let eventDate = document.getElementById("eventDate").value;
-    let eventLocation = document.getElementById("eventLocation").value.trim();
-    let eventType = document.getElementById("eventType").value;
+        const eventName =
+            document.getElementById("eventName").value.trim();
 
-    if (eventName === "") {
-        alert("Please enter Event Name");
-        return;
-    }
+        const eventDate =
+            document.getElementById("eventDate").value;
 
-    if (eventDate === "") {
-        alert("Please select Event Date");
-        return;
-    }
+        const eventLocation =
+            document.getElementById("eventLocation").value.trim();
 
-    if (eventLocation === "") {
-        alert("Please enter Event Location");
-        return;
-    }
+        const eventType =
+            document.getElementById("eventType").value;
 
-    if (eventType === "") {
-        alert("Please select Event Type");
-        return;
-    }
 
-    document.getElementById("eventResult").innerHTML = `
+        if (eventName === "") {
+            alert("Please enter Event Name");
+            return;
+        }
 
-        <h3>Event Created Successfully!</h3>
+        if (eventDate === "") {
+            alert("Please select Event Date");
+            return;
+        }
 
-        <p><strong>Event Name:</strong> ${eventName}</p>
+        if (eventLocation === "") {
+            alert("Please enter Event Location");
+            return;
+        }
 
-        <p><strong>Event Date:</strong> ${eventDate}</p>
+        if (eventType === "") {
+            alert("Please select Event Type");
+            return;
+        }
 
-        <p><strong>Event Location:</strong> ${eventLocation}</p>
 
-        <p><strong>Event Type:</strong> ${eventType}</p>
+        document.getElementById("eventResult").innerHTML = `
 
-    `;
+            <h3>Event Created Successfully!</h3>
 
-});
+            <p>
+                <strong>Event Name:</strong>
+                ${eventName}
+            </p>
+
+            <p>
+                <strong>Event Date:</strong>
+                ${eventDate}
+            </p>
+
+            <p>
+                <strong>Event Location:</strong>
+                ${eventLocation}
+            </p>
+
+            <p>
+                <strong>Event Type:</strong>
+                ${eventType}
+            </p>
+
+        `;
+
+    });
 
 
 
@@ -90,35 +113,42 @@ const vendors = {
 
 
 // =====================================================
-// VENDOR CATEGORY CHANGE
+// VENDOR CATEGORY
 // =====================================================
 
-document.getElementById("vendorCategory").addEventListener("change", function() {
+document
+    .getElementById("vendorCategory")
+    .addEventListener("change", function () {
 
-    let category = this.value;
+        const category = this.value;
 
-    let vendorDropdown = document.getElementById("vendorName");
+        const vendorDropdown =
+            document.getElementById("vendorName");
 
-    vendorDropdown.innerHTML =
-        '<option value="">Select Vendor</option>';
 
-    if (category === "") {
-        return;
-    }
+        vendorDropdown.innerHTML =
+            '<option value="">Select Vendor</option>';
 
-    vendors[category].forEach(function(vendor) {
 
-        let option = document.createElement("option");
+        if (category === "") {
+            return;
+        }
 
-        option.value = vendor;
 
-        option.textContent = vendor;
+        vendors[category].forEach(function (vendor) {
 
-        vendorDropdown.appendChild(option);
+            const option =
+                document.createElement("option");
+
+            option.value = vendor;
+
+            option.textContent = vendor;
+
+            vendorDropdown.appendChild(option);
+
+        });
 
     });
-
-});
 
 
 
@@ -126,39 +156,185 @@ document.getElementById("vendorCategory").addEventListener("change", function() 
 // BOOK VENDOR
 // =====================================================
 
-document.getElementById("bookVendorButton").addEventListener("click", function() {
+document
+    .getElementById("bookVendorButton")
+    .addEventListener("click", function () {
 
-    let category =
-        document.getElementById("vendorCategory").value;
+        const category =
+            document.getElementById("vendorCategory").value;
 
-    let vendor =
-        document.getElementById("vendorName").value;
+        const vendor =
+            document.getElementById("vendorName").value;
 
-    if (category === "") {
 
-        alert("Please select Vendor Category");
+        if (category === "") {
 
-        return;
-    }
+            alert("Please select Vendor Category");
 
-    if (vendor === "") {
+            return;
+        }
 
-        alert("Please select Vendor");
 
-        return;
-    }
+        if (vendor === "") {
 
-    document.getElementById("vendorResult").innerHTML = `
+            alert("Please select Vendor");
 
-        <h3>Vendor Booked Successfully!</h3>
+            return;
+        }
 
-        <p><strong>Vendor Category:</strong> ${category}</p>
 
-        <p><strong>Vendor:</strong> ${vendor}</p>
+        document.getElementById("vendorResult").innerHTML = `
 
-    `;
+            <h3>Vendor Booked Successfully!</h3>
 
-});
+            <p>
+                <strong>Vendor Category:</strong>
+                ${category}
+            </p>
+
+            <p>
+                <strong>Vendor:</strong>
+                ${vendor}
+            </p>
+
+        `;
+
+    });
+
+
+
+// =====================================================
+// FOOD MANAGEMENT
+// =====================================================
+
+document
+    .getElementById("foodForm")
+    .addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+
+        const foodCategory =
+            document.getElementById("foodCategory").value;
+
+        const foodGuests =
+            document.getElementById("foodGuests").value;
+
+        const mealType =
+            document.getElementById("mealType").value;
+
+
+        if (foodCategory === "") {
+
+            alert("Please select Food Category");
+
+            return;
+        }
+
+
+        if (
+            foodGuests === "" ||
+            Number(foodGuests) <= 0
+        ) {
+
+            alert("Please enter valid Number of Guests");
+
+            return;
+        }
+
+
+        if (mealType === "") {
+
+            alert("Please select Meal Type");
+
+            return;
+        }
+
+
+        document.getElementById("foodResult").innerHTML = `
+
+            <h3>Food Plan Added Successfully!</h3>
+
+            <p>
+                <strong>Food Category:</strong>
+                ${foodCategory}
+            </p>
+
+            <p>
+                <strong>Number of Guests:</strong>
+                ${foodGuests}
+            </p>
+
+            <p>
+                <strong>Meal Type:</strong>
+                ${mealType}
+            </p>
+
+        `;
+
+        document
+            .getElementById("foodForm")
+            .reset();
+
+    });
+
+
+
+// =====================================================
+// DECORATION
+// =====================================================
+
+document
+    .getElementById("decorationForm")
+    .addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+
+        const decorationType =
+            document.getElementById("decorationType").value;
+
+        const decorationArea =
+            document.getElementById("decorationArea").value;
+
+
+        if (decorationType === "") {
+
+            alert("Please select Decoration Type");
+
+            return;
+        }
+
+
+        if (decorationArea === "") {
+
+            alert("Please select Decoration Area");
+
+            return;
+        }
+
+
+        document.getElementById("decorationResult").innerHTML = `
+
+            <h3>Decoration Added Successfully!</h3>
+
+            <p>
+                <strong>Decoration Type:</strong>
+                ${decorationType}
+            </p>
+
+            <p>
+                <strong>Decoration Area:</strong>
+                ${decorationArea}
+            </p>
+
+        `;
+
+        document
+            .getElementById("decorationForm")
+            .reset();
+
+    });
 
 
 
@@ -166,88 +342,90 @@ document.getElementById("bookVendorButton").addEventListener("click", function()
 // GUEST LIST
 // =====================================================
 
-document.getElementById("guestForm").addEventListener("submit", function(event) {
+document
+    .getElementById("guestForm")
+    .addEventListener("submit", function (event) {
 
-    event.preventDefault();
-
-    let guestCategory =
-        document.getElementById("guestCategory").value;
-
-    let guestCount =
-        document.getElementById("guestCount").value;
-
-    let invitationStatus =
-        document.getElementById("invitationStatus").value;
-
-    let rsvpStatus =
-        document.getElementById("rsvpStatus").value;
+        event.preventDefault();
 
 
-    // Validation
+        const guestCategory =
+            document.getElementById("guestCategory").value;
 
-    if (guestCategory === "") {
+        const guestCount =
+            document.getElementById("guestCount").value;
 
-        alert("Please select Guest Category");
+        const invitationStatus =
+            document.getElementById("invitationStatus").value;
 
-        return;
-    }
-
-
-    if (guestCount === "" || Number(guestCount) <= 0) {
-
-        alert("Please enter a valid Number of Guests");
-
-        return;
-    }
+        const rsvpStatus =
+            document.getElementById("rsvpStatus").value;
 
 
-    if (invitationStatus === "") {
+        if (guestCategory === "") {
 
-        alert("Please select Invitation Status");
+            alert("Please select Guest Category");
 
-        return;
-    }
-
-
-    if (rsvpStatus === "") {
-
-        alert("Please select RSVP Status");
-
-        return;
-    }
+            return;
+        }
 
 
-    // Display data
+        if (
+            guestCount === "" ||
+            Number(guestCount) <= 0
+        ) {
 
-    document.getElementById("guestResult").innerHTML = `
+            alert("Please enter valid Number of Guests");
 
-        <h3>Guest Group Added Successfully!</h3>
-
-        <p>
-            <strong>Guest Category:</strong>
-            ${guestCategory}
-        </p>
-
-        <p>
-            <strong>Number of Guests:</strong>
-            ${guestCount}
-        </p>
-
-        <p>
-            <strong>Invitation Status:</strong>
-            ${invitationStatus}
-        </p>
-
-        <p>
-            <strong>RSVP Status:</strong>
-            ${rsvpStatus}
-        </p>
-
-    `;
+            return;
+        }
 
 
-    // Clear form
+        if (invitationStatus === "") {
 
-    document.getElementById("guestForm").reset();
+            alert("Please select Invitation Status");
 
-});
+            return;
+        }
+
+
+        if (rsvpStatus === "") {
+
+            alert("Please select RSVP Status");
+
+            return;
+        }
+
+
+        document.getElementById("guestResult").innerHTML = `
+
+            <h3>Guest Group Added Successfully!</h3>
+
+            <p>
+                <strong>Guest Category:</strong>
+                ${guestCategory}
+            </p>
+
+            <p>
+                <strong>Number of Guests:</strong>
+                ${guestCount}
+            </p>
+
+            <p>
+                <strong>Invitation Status:</strong>
+                ${invitationStatus}
+            </p>
+
+            <p>
+                <strong>RSVP Status:</strong>
+                ${rsvpStatus}
+            </p>
+
+        `;
+
+
+        document
+            .getElementById("guestForm")
+            .reset();
+
+    });

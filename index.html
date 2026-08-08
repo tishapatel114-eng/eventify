@@ -14,8 +14,9 @@
 
     <h1>Event Management System</h1>
 
-
-    <!-- ================= CREATE EVENT ================= -->
+    <!-- ================================================= -->
+    <!-- CREATE EVENT -->
+    <!-- ================================================= -->
 
     <h2>Create Event</h2>
 
@@ -23,43 +24,81 @@
 
         <label>Event Name:</label>
         <br>
-        <input type="text" id="eventName" placeholder="Enter event name">
+
+        <input
+            type="text"
+            id="eventName"
+            placeholder="Enter event name"
+        >
 
         <br><br>
+
 
         <label>Event Date:</label>
         <br>
-        <input type="date" id="eventDate">
+
+        <input
+            type="date"
+            id="eventDate"
+        >
 
         <br><br>
+
 
         <label>Event Location:</label>
         <br>
-        <input type="text" id="eventLocation" placeholder="Enter location">
+
+        <input
+            type="text"
+            id="eventLocation"
+            placeholder="Enter event location"
+        >
 
         <br><br>
+
 
         <label>Event Type:</label>
         <br>
 
         <select id="eventType">
-            <option value="">Select Event Type</option>
-            <option value="Wedding">Wedding</option>
-            <option value="Birthday">Birthday</option>
-            <option value="Corporate">Corporate</option>
-            <option value="Engagement">Engagement</option>
+
+            <option value="">
+                Select Event Type
+            </option>
+
+            <option value="Wedding">
+                Wedding
+            </option>
+
+            <option value="Birthday">
+                Birthday
+            </option>
+
+            <option value="Corporate">
+                Corporate
+            </option>
+
+            <option value="Engagement">
+                Engagement
+            </option>
+
         </select>
 
         <br><br>
 
-        <button type="submit">Create Event</button>
+
+        <button type="submit">
+            Create Event
+        </button>
 
     </form>
 
     <div id="eventResult"></div>
 
 
-    <!-- ================= VENDOR BOOKING ================= -->
+    <!-- ================================================= -->
+    <!-- VENDOR BOOKING -->
+    <!-- ================================================= -->
 
     <hr>
 
@@ -70,41 +109,241 @@
 
     <select id="vendorCategory">
 
-        <option value="">Select Vendor Category</option>
+        <option value="">
+            Select Vendor Category
+        </option>
 
-        <option value="Decoration">Decoration</option>
+        <option value="Decoration">
+            Decoration
+        </option>
 
-        <option value="Food Catering">Food Catering</option>
+        <option value="Food Catering">
+            Food Catering
+        </option>
 
-        <option value="Photography">Photography</option>
+        <option value="Photography">
+            Photography
+        </option>
 
-        <option value="DJ">DJ</option>
+        <option value="DJ">
+            DJ
+        </option>
 
-        <option value="Makeup Artist">Makeup Artist</option>
+        <option value="Makeup Artist">
+            Makeup Artist
+        </option>
 
     </select>
 
     <br><br>
+
 
     <label>Select Vendor:</label>
     <br>
 
     <select id="vendorName">
 
-        <option value="">Select Vendor</option>
+        <option value="">
+            Select Vendor
+        </option>
 
     </select>
 
     <br><br>
 
-    <button type="button" id="bookVendorButton">
+
+    <button
+        type="button"
+        id="bookVendorButton"
+    >
         Book Vendor
     </button>
 
     <div id="vendorResult"></div>
 
 
-    <!-- ================= GUEST LIST ================= -->
+    <!-- ================================================= -->
+    <!-- FOOD MANAGEMENT -->
+    <!-- ================================================= -->
+
+    <hr>
+
+    <h2>Food Management</h2>
+
+    <form id="foodForm">
+
+        <label>Food Category:</label>
+        <br>
+
+        <select id="foodCategory">
+
+            <option value="">
+                Select Food Category
+            </option>
+
+            <option value="Gujarati">
+                Gujarati
+            </option>
+
+            <option value="Punjabi">
+                Punjabi
+            </option>
+
+            <option value="South Indian">
+                South Indian
+            </option>
+
+            <option value="Chinese">
+                Chinese
+            </option>
+
+            <option value="Continental">
+                Continental
+            </option>
+
+        </select>
+
+        <br><br>
+
+
+        <label>Number of Guests:</label>
+        <br>
+
+        <input
+            type="number"
+            id="foodGuests"
+            min="1"
+            placeholder="Enter number of guests"
+        >
+
+        <br><br>
+
+
+        <label>Meal Type:</label>
+        <br>
+
+        <select id="mealType">
+
+            <option value="">
+                Select Meal Type
+            </option>
+
+            <option value="Breakfast">
+                Breakfast
+            </option>
+
+            <option value="Lunch">
+                Lunch
+            </option>
+
+            <option value="Dinner">
+                Dinner
+            </option>
+
+            <option value="Snacks">
+                Snacks
+            </option>
+
+        </select>
+
+        <br><br>
+
+
+        <button type="submit">
+            Add Food Plan
+        </button>
+
+    </form>
+
+    <div id="foodResult"></div>
+
+
+    <!-- ================================================= -->
+    <!-- DECORATION -->
+    <!-- ================================================= -->
+
+    <hr>
+
+    <h2>Decoration</h2>
+
+    <form id="decorationForm">
+
+        <label>Decoration Type:</label>
+        <br>
+
+        <select id="decorationType">
+
+            <option value="">
+                Select Decoration
+            </option>
+
+            <option value="Traditional">
+                Traditional
+            </option>
+
+            <option value="Modern">
+                Modern
+            </option>
+
+            <option value="Floral">
+                Floral
+            </option>
+
+            <option value="Royal">
+                Royal
+            </option>
+
+            <option value="Minimal">
+                Minimal
+            </option>
+
+        </select>
+
+        <br><br>
+
+
+        <label>Decoration Area:</label>
+        <br>
+
+        <select id="decorationArea">
+
+            <option value="">
+                Select Area
+            </option>
+
+            <option value="Stage">
+                Stage
+            </option>
+
+            <option value="Entrance">
+                Entrance
+            </option>
+
+            <option value="Hall">
+                Hall
+            </option>
+
+            <option value="Complete Venue">
+                Complete Venue
+            </option>
+
+        </select>
+
+        <br><br>
+
+
+        <button type="submit">
+            Add Decoration
+        </button>
+
+    </form>
+
+    <div id="decorationResult"></div>
+
+
+    <!-- ================================================= -->
+    <!-- GUEST LIST -->
+    <!-- ================================================= -->
 
     <hr>
 
@@ -117,15 +356,25 @@
 
         <select id="guestCategory">
 
-            <option value="">Select Guest Category</option>
+            <option value="">
+                Select Guest Category
+            </option>
 
-            <option value="Family">Family</option>
+            <option value="Family">
+                Family
+            </option>
 
-            <option value="Friends">Friends</option>
+            <option value="Friends">
+                Friends
+            </option>
 
-            <option value="Relatives">Relatives</option>
+            <option value="Relatives">
+                Relatives
+            </option>
 
-            <option value="Colleagues">Colleagues</option>
+            <option value="Colleagues">
+                Colleagues
+            </option>
 
         </select>
 
@@ -138,8 +387,8 @@
         <input
             type="number"
             id="guestCount"
-            placeholder="Enter number of guests"
             min="1"
+            placeholder="Enter number of guests"
         >
 
         <br><br>
@@ -150,11 +399,17 @@
 
         <select id="invitationStatus">
 
-            <option value="">Select Invitation Status</option>
+            <option value="">
+                Select Invitation Status
+            </option>
 
-            <option value="Sent">Sent</option>
+            <option value="Sent">
+                Sent
+            </option>
 
-            <option value="Pending">Pending</option>
+            <option value="Pending">
+                Pending
+            </option>
 
         </select>
 
@@ -166,13 +421,21 @@
 
         <select id="rsvpStatus">
 
-            <option value="">Select RSVP Status</option>
+            <option value="">
+                Select RSVP Status
+            </option>
 
-            <option value="Confirmed">Confirmed</option>
+            <option value="Confirmed">
+                Confirmed
+            </option>
 
-            <option value="Pending">Pending</option>
+            <option value="Pending">
+                Pending
+            </option>
 
-            <option value="Declined">Declined</option>
+            <option value="Declined">
+                Declined
+            </option>
 
         </select>
 
@@ -188,7 +451,9 @@
     <div id="guestResult"></div>
 
 
-    <!-- IMPORTANT: script must be loaded AFTER all HTML -->
+    <!-- ================================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ================================================= -->
 
     <script src="script.js"></script>
 
